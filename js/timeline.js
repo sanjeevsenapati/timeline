@@ -112,7 +112,7 @@ function initTimeline() {
       modalQuoteBox.innerHTML = window.parseMarkdown ? window.parseMarkdown(rawQuote) : rawQuote;
     }
 
-    // Populate Story Paragraphs
+    // Populate Story Paragraphs & Work Experience Sub-Timeline Branch
     if (modalStoryParagraphs) {
       modalStoryParagraphs.innerHTML = '';
       if (event.storyParagraphs && event.storyParagraphs.length > 0) {
@@ -125,6 +125,38 @@ function initTimeline() {
         const p = document.createElement('p');
         p.innerHTML = window.parseMarkdown ? window.parseMarkdown(event.summary) : event.summary;
         modalStoryParagraphs.appendChild(p);
+      }
+
+      // If this event has Work Experience Branches (Career Timeline), render the Branching Sub-Timeline!
+      if (event.workBranches && event.workBranches.length > 0) {
+        const branchContainer = document.createElement('div');
+        branchContainer.className = 'career-branching-timeline';
+        branchContainer.innerHTML = `
+          <div class="career-branching-header">
+            <h3>💼 Career & Work Experience Sub-Timeline</h3>
+            <p>Chronological career progression across premier technology organizations</p>
+          </div>
+          <div class="career-branching-tree">
+            ${event.workBranches.map(branch => `
+              <div class="career-branch-node">
+                <div class="branch-node-marker">${branch.icon || '💼'}</div>
+                <div class="branch-node-content">
+                  <div class="branch-top-bar">
+                    <div class="branch-company-name">${branch.company}</div>
+                    <div class="branch-period-badge">${branch.period}</div>
+                  </div>
+                  <div class="branch-role-title">${branch.role} <span class="branch-emp-type">• ${branch.employmentType}</span></div>
+                  <div class="branch-location">📍 ${branch.location}</div>
+                  <p class="branch-summary">${branch.summary}</p>
+                  <div class="branch-skills-wrap">
+                    ${(branch.skills || []).map(skill => `<span class="branch-skill-badge">${skill}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        modalStoryParagraphs.appendChild(branchContainer);
       }
     }
 

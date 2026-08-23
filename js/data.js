@@ -739,28 +739,101 @@ const personalData = {
       ]
     },
     {
-      id: "bank-of-america",
-      year: "2011 – 2013",
-      date: "2011 – 2013",
-      title: "Bank of America — Global Banking Technology",
+      id: "career-journey-branch",
+      year: "2012 – 2026",
+      date: "Professional Journey (2012 – 2026)",
+      title: "Professional Journey & Career Milestones",
       category: "career",
-      categoryLabel: "Career",
-      location: "Hyderabad, India",
-      tag: "Career",
-      icon: "🏛️",
+      categoryLabel: "Career & CBDC",
+      location: "Mumbai • Bengaluru • Hyderabad",
+      tag: "Career Timeline",
+      icon: "💼",
       thumbnail: "assets/images/career/boa-systems.jpg",
-      summary: "Technical consulting on global financial infrastructure, mission-critical platforms, high-availability architecture, and incident management.",
-      quote: "“In global financial technology, reliability is non-negotiable. Seconds of downtime mean millions of dollars; precision is the only standard.”",
-      statsBadge: "Bank of America • Enterprise IT",
+      summary: "Explore Sanjeev's complete career progression across 6 premier companies, high-throughput payment architectures, cloud platforms, and enterprise system leadership.",
+      quote: "“Engineering is not just writing code; it is taking ownership of what you build and maintaining zero downtime for millions of users.”",
+      statsBadge: "6 Companies • 14+ Years Tech Leadership",
       storyParagraphs: [
-        "During this vital phase, Sanjeev worked on critical banking platforms for Bank of America in Hyderabad. Navigating multi-tiered enterprise architectures, global middleware systems, and strict SLA requirements, he refined his expertise in high-availability financial infrastructure.",
-        "He collaborated across global time zones, leading incident triages, root-cause analyses, and performance tuning for systems serving tens of millions of financial transactions daily.",
-        "This chapter solidified his deep appreciation for financial systems architecture, which would later form the bedrock of his pioneering work in Central Bank Digital Currency (CBDC)."
+        "Sanjeev's professional career spans **over 14 years** of high-stakes technology leadership, infrastructure automation, cloud architecture, and financial systems engineering.",
+        "Explore the interactive sub-timeline branch below to view details, skills, and accomplishments across **Prodevans**, **Visa**, **ADP**, **IMImobile**, **Pramati Technologies**, and **Bank of America**."
       ],
       takeaways: [
-        "Mastered global enterprise banking architectures, disaster recovery protocols, and high-concurrency systems",
-        "Sharpened executive communication and crisis leadership under high pressure",
-        "Established technical credibility in mission-critical financial systems"
+        "14+ years navigating enterprise systems, Kubernetes cloud platforms, and Site Reliability Engineering (SRE)",
+        "Proven expertise across sovereign fintech, CBDC / Digital Rupee payment rails, and AWS cloud architecture",
+        "Deep hands-on craftsmanship across Linux, Docker, Ansible, Terraform, Python, and high-concurrency payment engines"
+      ],
+      workBranches: [
+        {
+          id: "role-prodevans",
+          company: "Prodevans Technologies",
+          role: "Solutions Architect",
+          employmentType: "Full-time",
+          period: "Mar 2025 – Jul 2026 · 1 yr 5 mos",
+          location: "Navi Mumbai, Maharashtra, India · Hybrid",
+          badge: "CBDC & Sovereign Fintech Architect",
+          icon: "⚡",
+          summary: "Architecting Central Bank Digital Currency (CBDC) / Digital Rupee payment rails, OpenShift/Kubernetes cluster reliability, and high-throughput enterprise fintech integrations.",
+          skills: ["CBDC / Digital Rupee", "OpenShift", "Kubernetes", "Fintech API Gateways", "Enterprise Payments", "SRE"]
+        },
+        {
+          id: "role-visa",
+          company: "Visa",
+          role: "Senior Staff Software Engineer",
+          employmentType: "Full-time",
+          period: "Sep 2021 – May 2024 · 2 yrs 9 mos",
+          location: "Bengaluru, Karnataka, India · Hybrid",
+          badge: "Global Payment Infrastructure",
+          icon: "💳",
+          summary: "Engineering high-throughput, mission-critical payment rails, Kubernetes container platforms, SRE practices, and enterprise system reliability.",
+          skills: ["Troubleshooting", "Kubernetes", "Payment Infrastructure", "SRE", "Microservices", "Cloud Reliability"]
+        },
+        {
+          id: "role-adp",
+          company: "ADP",
+          role: "Architect",
+          employmentType: "Full-time",
+          period: "Nov 2019 – Sep 2021 · 1 yr 11 mos",
+          location: "Greater Hyderabad Area",
+          badge: "AWS & EKS Architecture",
+          icon: "🏗️",
+          summary: "Leading cloud architecture design, AWS infrastructure automation, Amazon EKS cluster management, and scalable enterprise platform services.",
+          skills: ["Amazon Web Services (AWS)", "Amazon EKS", "Cloud Architecture", "Containerization", "DevOps", "SRE"]
+        },
+        {
+          id: "role-imimobile",
+          company: "IMImobile",
+          role: "Lead Engineer Cloud",
+          employmentType: "Full-time",
+          period: "Dec 2016 – Nov 2019 · 3 yrs",
+          location: "Hyderabad, Telangana, India",
+          badge: "Cloud Platform & Automation",
+          icon: "☁️",
+          summary: "Spearheading cloud platform engineering, containerized services, and automated infrastructure deployments across enterprise messaging and communications platforms.",
+          skills: ["AWS", "ECS", "Docker", "NodeJS", "Ansible", "Python", "Bash Shell", "Terraform", "Troubleshooting"]
+        },
+        {
+          id: "role-pramati",
+          company: "Pramati Technologies Private Limited",
+          role: "Lead System Administrator",
+          employmentType": "Full-time",
+          period: "Jun 2013 – Jun 2016 · 3 yrs 1 mo",
+          location: "Hyderabad, India",
+          badge: "AWS Cloud Architect & System Automation",
+          icon: "⚙️",
+          summary: "AWS Cloud Architecting, maintaining enterprise AWS environments, building custom automation tools in Python, Bash, and Ansible, and ensuring zero-downtime operations.",
+          skills: ["AWS Cloud Architect", "Python", "Bash", "Ansible", "Linux Administration", "Troubleshooting"]
+        },
+        {
+          id: "role-boa",
+          company: "Bank of America",
+          role: "Sr Analyst - System Support",
+          employmentType": "Full-time",
+          period: "Feb 2012 – Jun 2013 · 1 yr 5 mos",
+          location: "Hyderabad, Telangana, India",
+          badge: "Global Banking Infrastructure",
+          icon: "🏛️",
+          summary: "Provisioning and configuring new servers for bank infrastructure, creating server instances in cloud environments, and resolving L3 Linux incident tickets for high-availability banking systems.",
+          skills: ["System Support", "Banking Infrastructure", "Server Provisioning", "Linux L3 Incident Resolution", "Cloud Environments"]
+        }
       ]
     },
     {
