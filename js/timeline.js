@@ -158,6 +158,41 @@ function initTimeline() {
         `;
         modalStoryParagraphs.appendChild(branchContainer);
       }
+
+      // If this event has Children Branches (Aadvika & Aadhees), render Children Sub-Timeline!
+      if (event.childrenBranches && event.childrenBranches.length > 0) {
+        const childrenContainer = document.createElement('div');
+        childrenContainer.className = 'children-branching-timeline';
+        childrenContainer.innerHTML = `
+          <div class="children-branching-header">
+            <h3>👨‍👧‍👦 Our Children — Sub-Timeline Branches</h3>
+            <p>Aadvika & Aadhees — The heart, laughter, and joy of our family</p>
+          </div>
+          <div class="children-branching-grid">
+            ${event.childrenBranches.map(child => `
+              <div class="child-branch-card">
+                <div class="child-card-header">
+                  <div class="child-icon">${child.icon || '❤️'}</div>
+                  <div class="child-title-wrap">
+                    <h4 class="child-name">${child.name}</h4>
+                    <span class="child-relation-badge">${child.relationship} • ${child.approxAge}</span>
+                  </div>
+                </div>
+                <div class="child-photo-wrap">
+                  <img src="${child.photo}" alt="${child.name}" onerror="this.src='assets/images/children/aadvika-aadhees.jpg'">
+                </div>
+                <p class="child-personality"><strong>Personality:</strong> ${child.personality}</p>
+                <blockquote class="child-quote">${child.quote}</blockquote>
+                <div class="child-lesson">
+                  <span class="child-lesson-label">💡 Lessons to Father:</span>
+                  <p>${child.lessonsToFather}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        modalStoryParagraphs.appendChild(childrenContainer);
+      }
     }
 
     // Populate Takeaways

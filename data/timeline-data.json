@@ -613,25 +613,51 @@
       "id": "children-fatherhood",
       "year": "2010s – 2020s",
       "date": "Parenthood Milestones",
-      "title": "Fatherhood — Welcoming Aadvika (Daughter) & Aadhees (Son)",
+      "title": "Fatherhood — Our Children: Aadvika (Daughter) & Aadhees (Son)",
       "category": "family",
       "categoryLabel": "Fatherhood & Children",
       "location": "India",
-      "tag": "Children",
+      "tag": "Children Timeline",
       "icon": "👨‍👧‍👦",
       "thumbnail": "assets/images/children/aadvika-aadhees.jpg",
-      "summary": "Becoming a proud father to daughter Aadvika and son Aadhees. The ultimate chapter that redefined love, patience, and future purpose.",
+      "summary": "Becoming a proud father to daughter Aadvika and son Aadhees. Explore the interactive sub-timeline for both children below.",
       "quote": "“To be a father is to look at your children and realize that all your hard work, all your dreams, and all your love now have a living heartbeat.”",
       "statsBadge": "Aadvika (Daughter) • Aadhees (Son) • Family Joy",
       "storyParagraphs": [
-        "Nothing in life transforms a man like fatherhood. Holding his daughter Aadvika for the first time unlocked a level of tenderness, protective instinct, and unconditional love that words cannot capture. Seeing her bright smile, creative curiosity—like proudly showing her butterfly drawings—and watching her grow into a confident, kind young girl is one of life's greatest joys.",
-        "When his son Aadhees arrived, the family circle was complete. Aadhees brought boundlessly energetic laughter, curiosity, and playful adventure into their daily routine.",
-        "Being an active, present father—teaching them science concepts, reading bedtime stories, playing games, and instilling strong moral values—is Sanjeev's proudest and most sacred responsibility."
+        "Nothing in life transforms a man like fatherhood. Holding his daughter **Aadvika** for the first time unlocked a level of tenderness, protective instinct, and unconditional love that words cannot capture.",
+        "When his son **Aadhees** arrived, the family circle was complete, bringing boundlessly energetic laughter, curiosity, and playful adventure into their daily routine.",
+        "Explore the sub-timeline branches below for dedicated stories, lessons, and memories with **Aadvika** and **Aadhees**."
       ],
       "takeaways": [
-        "Fatherhood is the ultimate motivator for excellence, integrity, and patience",
+        "Fatherhood is the ultimate motivator for excellence, integrity, patience, and love",
         "Prioritizing presence over mere provision: creating cherished everyday memories",
         "Building a legacy of confidence, compassion, and resilience in Aadvika and Aadhees"
+      ],
+      "childrenBranches": [
+        {
+          "id": "child-aadvika",
+          "name": "Aadvika Senapati",
+          "relationship": "Daughter",
+          "approxAge": "~8 Years",
+          "icon": "🌸",
+          "tag": "Daughter",
+          "personality": "Curious, imaginative, compassionate, and full of spirited laughter.",
+          "quote": "“Watching Aadvika grow teaches me how boundless the world looks through innocent eyes.”",
+          "lessonsToFather": "She taught me the purest form of patience, gentle empathy, and the magic of everyday curiosity.",
+          "photo": "assets/images/children/aadvika.jpg"
+        },
+        {
+          "id": "child-aadhees",
+          "name": "Aadhees Senapati",
+          "relationship": "Son",
+          "approxAge": "~5 Years",
+          "icon": "🚀",
+          "tag": "Son",
+          "personality": "Energetic, playful, observant, and bringing unstoppable joy into our home.",
+          "quote": "“Aadhees reminds me of the simple thrill of building, exploring, and fearlessly learning something new.”",
+          "lessonsToFather": "He taught me that strength is gentle, and every moment spent playing is an investment in a happy memory.",
+          "photo": "assets/images/children/aadhees.jpg"
+        }
       ]
     },
     {
