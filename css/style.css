@@ -2495,6 +2495,26 @@ section {
   margin-bottom: 0.85rem;
 }
 
+.sibling-photo-wrap {
+  width: 100%;
+  height: 160px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--border-card);
+}
+
+.sibling-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sibling-branch-card:hover .sibling-photo-wrap img {
+  transform: scale(1.05);
+}
+
 .sibling-icon {
   width: 40px;
   height: 40px;
@@ -2551,4 +2571,74 @@ section {
   margin-bottom: 0;
   font-size: 0.84rem;
   opacity: 0.9;
+}
+
+/* --------------------------------------------------------------------------
+ * INLINE EXPANDABLE SUB-TIMELINE ACCORDION
+ * -------------------------------------------------------------------------- */
+.card-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px dashed var(--accent-gold, #f59e0b);
+  border-radius: var(--radius-sm);
+  color: var(--accent-gold, #f59e0b);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  z-index: 5;
+}
+
+[data-theme="rainbow"] .card-expand-btn {
+  background: rgba(255, 94, 98, 0.12);
+  border-color: #ff5e62;
+  color: #ff9966;
+}
+
+.card-expand-btn:hover {
+  background: rgba(245, 158, 11, 0.22);
+  transform: translateY(-1px);
+}
+
+.expand-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.inline-sub-timeline-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, margin 0.3s ease;
+  margin-top: 0;
+}
+
+.timeline-card.is-expanded .inline-sub-timeline-wrapper {
+  max-height: 4000px;
+  opacity: 1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.compact-children-view {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.compact-child-card {
+  padding: 1rem;
+}
+
+.child-personality-summary {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 0;
 }

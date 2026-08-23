@@ -647,7 +647,7 @@ const personalData = {
           tag: "Sister (Age 40)",
           summary: "Elder/loving sister, sharing childhood memories, family festivities, and unwavering sisterly care and wisdom.",
           lessonsToFamily: "Teaches warm compassion, family harmony, and looking after loved ones with boundless care.",
-          photo: "assets/images/siblings/sibling-placeholder.jpg"
+          photo: "assets/images/siblings/sona.jpg"
         },
         {
           id: "sib-rajeev",
@@ -658,7 +658,7 @@ const personalData = {
           tag: "Brother (Age 38)",
           summary: "Brother, sharing boyhood adventures, cricket matches, technical curiosity, and lifelong brotherhood.",
           lessonsToFamily: "Teaches loyalty, mutual encouragement, and standing shoulder-to-shoulder through life's milestones.",
-          photo: "assets/images/siblings/sibling-placeholder.jpg"
+          photo: "assets/images/siblings/rajeev.jpg"
         },
         {
           id: "sib-meena",
@@ -669,7 +669,7 @@ const personalData = {
           tag: "Sister (Age 36)",
           summary: "Younger sister, bringing energy, joy, warm conversations, and keeping family traditions alive.",
           lessonsToFamily: "Teaches cheerful resilience, festive warmth, and keeping family ties strong across any distance.",
-          photo: "assets/images/siblings/sibling-placeholder.jpg"
+          photo: "assets/images/siblings/meena.jpg"
         }
       ]
     },

@@ -42,6 +42,113 @@ function initTimeline() {
       item.className = 'timeline-item reveal-on-scroll';
       item.setAttribute('data-category', event.category);
 
+      // Detect if card has sub-branches
+      let expandBtnHTML = '';
+      let subTimelineHTML = '';
+
+      if (event.workBranches && event.workBranches.length > 0) {
+        expandBtnHTML = `
+          <button type="button" class="card-expand-btn" data-expand="work">
+            <span>💼</span> Expand Work Experience Sub-Timeline (${event.workBranches.length} Companies) <span class="expand-arrow">▾</span>
+          </button>
+        `;
+        subTimelineHTML = `
+          <div class="inline-sub-timeline-wrapper">
+            <div class="career-branching-timeline">
+              <div class="career-branching-header">
+                <h3>💼 Career & Work Experience Sub-Timeline</h3>
+                <p>Chronological career progression across premier technology organizations</p>
+              </div>
+              <div class="career-branching-tree">
+                ${event.workBranches.map(branch => `
+                  <div class="career-branch-node">
+                    <div class="branch-node-marker">${branch.icon || '💼'}</div>
+                    <div class="branch-node-content">
+                      <div class="branch-top-bar">
+                        <div class="branch-company-name">${branch.company}</div>
+                        <div class="branch-period-badge">${branch.period}</div>
+                      </div>
+                      <div class="branch-role-title">${branch.role} <span class="branch-emp-type">• ${branch.employmentType}</span></div>
+                      <div class="branch-location">📍 ${branch.location}</div>
+                      <p class="branch-summary">${branch.summary}</p>
+                      <div class="branch-skills-wrap">
+                        ${(branch.skills || []).map(skill => `<span class="branch-skill-badge">${skill}</span>`).join('')}
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (event.childrenBranches && event.childrenBranches.length > 0) {
+        expandBtnHTML = `
+          <button type="button" class="card-expand-btn" data-expand="children">
+            <span>👨‍👧‍👦</span> View Children Sub-Timeline (Aadvika & Aadhees) <span class="expand-arrow">▾</span>
+          </button>
+        `;
+        subTimelineHTML = `
+          <div class="inline-sub-timeline-wrapper">
+            <div class="children-branching-timeline compact-children-view">
+              <div class="children-branching-grid">
+                ${event.childrenBranches.map(child => `
+                  <div class="child-branch-card compact-child-card">
+                    <div class="child-card-header">
+                      <div class="child-icon">${child.icon || '❤️'}</div>
+                      <div class="child-title-wrap">
+                        <h4 class="child-name">${child.name}</h4>
+                        <span class="child-relation-badge">${child.relationship} • ${child.approxAge}</span>
+                      </div>
+                    </div>
+                    <div class="child-photo-wrap">
+                      <img src="${child.photo}" alt="${child.name}" onerror="this.src='assets/images/children/aadvika-aadhees.jpg'">
+                    </div>
+                    <p class="child-personality-summary">${child.personality}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (event.siblingBranches && event.siblingBranches.length > 0) {
+        expandBtnHTML = `
+          <button type="button" class="card-expand-btn" data-expand="siblings">
+            <span>👨‍👩‍👧‍👦</span> View Siblings Sub-Timeline (Sona, Rajeev, Meena) <span class="expand-arrow">▾</span>
+          </button>
+        `;
+        subTimelineHTML = `
+          <div class="inline-sub-timeline-wrapper">
+            <div class="sibling-branching-timeline">
+              <div class="sibling-branching-header">
+                <h3>👨‍👩‍👧‍👦 Our Siblings — Sub-Timeline Branches</h3>
+                <p>Sona (40), Rajeev (38) & Meena (36) — Lifelong family bond and shared roots</p>
+              </div>
+              <div class="sibling-branching-grid">
+                ${event.siblingBranches.map(sib => `
+                  <div class="sibling-branch-card">
+                    <div class="sibling-card-header">
+                      <div class="sibling-icon">${sib.icon || '💖'}</div>
+                      <div class="sibling-title-wrap">
+                        <h4 class="sibling-name">${sib.name}</h4>
+                        <span class="sibling-relation-badge">${sib.relationship} • Age ${sib.age}</span>
+                      </div>
+                    </div>
+                    <div class="sibling-photo-wrap">
+                      <img src="${sib.photo}" alt="${sib.name}" onerror="this.src='assets/images/siblings/sibling-placeholder.jpg'">
+                    </div>
+                    <p class="sibling-summary">${sib.summary}</p>
+                    <div class="sibling-lesson">
+                      <span class="sibling-lesson-label">✨ Family Value & Shared Memory:</span>
+                      <p>${sib.lessonsToFamily}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
       item.innerHTML = `
         <div class="timeline-node" aria-hidden="true">${event.icon || '✨'}</div>
         <div class="timeline-card clickable-chapter-card" data-index="${originalIndex}">
@@ -61,6 +168,9 @@ function initTimeline() {
             </div>
           </div>
 
+          ${expandBtnHTML}
+          ${subTimelineHTML}
+
           <div class="timeline-card-footer">
             <span class="explore-chapter-btn">
               <span>📖</span> Explore Full Chapter & Lessons <span>↗</span>
@@ -69,8 +179,20 @@ function initTimeline() {
         </div>
       `;
 
-      // Click card to open modal
       const card = item.querySelector('.timeline-card');
+      const expandBtn = item.querySelector('.card-expand-btn');
+
+      // Click inline expand button to toggle sub-timeline without opening popup
+      if (expandBtn) {
+        expandBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = card.classList.toggle('is-expanded');
+          const arrow = expandBtn.querySelector('.expand-arrow');
+          if (arrow) arrow.textContent = isExpanded ? '▴' : '▾';
+        });
+      }
+
+      // Click card body to open full chapter popup modal
       card.addEventListener('click', () => {
         openChapterModal(originalIndex);
       });
