@@ -11,15 +11,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 2. Initialize Navigation & Mobile Drawer
   initNavigation();
 
-  // 3. Load Personal Data (Synchronously from js/data.js or async from timeline-data.json)
+  // 3. Initialize Ambient Soundscape Engine
+  initAmbientAudio();
+
+  // 4. Load Personal Data (Synchronously from js/data.js or async from timeline-data.json)
   const data = window.personalData || await window.loadPersonalData();
 
-  // 4. Populate Dynamic Content
+  // 5. Populate Dynamic Content
   if (data && Object.keys(data).length > 0) {
     populateDynamicData(data);
   }
 
-  // 5. Initialize Submodules
+  // 6. Initialize Submodules
   if (window.initTimeline) window.initTimeline();
   if (window.initGalleryModal) window.initGalleryModal();
   if (window.initAnimations) window.initAnimations();
@@ -362,4 +365,99 @@ function populateDynamicData(data) {
       </div>
     `).join('');
   }
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * AMBIENT SOUNDSCAPE ENGINE (Web Audio API Meditative Chimes)
+ * ----------------------------------------------------------------------------
+ */
+function initAmbientAudio() {
+  const btn = document.getElementById('ambient-sound-btn');
+  if (!btn) return;
+
+  let audioCtx = null;
+  let isPlaying = false;
+  let timerId = null;
+  let masterGain = null;
+
+  // Harmonious pentatonic ambient frequencies in 432Hz tuning (Cmaj9 / Fmaj7)
+  const notes = [
+    130.81, 164.81, 196.00, 246.94, 261.63, 329.63, 392.00, 493.88, 523.25, 659.25
+  ];
+
+  function playSoftChime() {
+    if (!isPlaying || !audioCtx) return;
+
+    try {
+      const freq = notes[Math.floor(Math.random() * notes.length)];
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = Math.random() > 0.4 ? 'sine' : 'triangle';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      // Soft envelope for warm meditation sound
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.04, audioCtx.currentTime + 1.2);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 6.5);
+
+      osc.connect(gain);
+      gain.connect(masterGain);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + 6.6);
+    } catch (err) {
+      console.warn('Ambient chime error:', err);
+    }
+
+    if (isPlaying) {
+      const delay = 1500 + Math.random() * 2200;
+      timerId = setTimeout(playSoftChime, delay);
+    }
+  }
+
+  function startAmbientSound() {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContextClass();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+      masterGain.connect(audioCtx.destination);
+    }
+
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+
+    isPlaying = true;
+    btn.classList.add('is-playing');
+    btn.innerHTML = '🎶';
+    btn.setAttribute('title', 'Mute Ambient Music');
+    btn.setAttribute('aria-label', 'Mute Ambient Music');
+
+    playSoftChime();
+    setTimeout(playSoftChime, 800);
+  }
+
+  function stopAmbientSound() {
+    isPlaying = false;
+    if (timerId) clearTimeout(timerId);
+    btn.classList.remove('is-playing');
+    btn.innerHTML = '🎵';
+    btn.setAttribute('title', 'Play Soft Ambient Music');
+    btn.setAttribute('aria-label', 'Play Soft Ambient Music');
+
+    if (audioCtx && masterGain) {
+      masterGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5);
+    }
+  }
+
+  btn.addEventListener('click', () => {
+    if (isPlaying) {
+      stopAmbientSound();
+    } else {
+      startAmbientSound();
+    }
+  });
 }

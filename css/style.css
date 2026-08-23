@@ -541,6 +541,18 @@ section {
   transform: scale(1.08);
 }
 
+.icon-circle-btn.is-playing {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 16px var(--accent-gold);
+  animation: pulseAudioGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseAudioGlow {
+  0% { transform: scale(1); box-shadow: 0 0 8px var(--accent-gold); }
+  50% { transform: scale(1.1); box-shadow: 0 0 20px var(--accent-gold); }
+  100% { transform: scale(1); box-shadow: 0 0 8px var(--accent-gold); }
+}
+
 /* Apple-Style Circular Floating Menu Button */
 .header-menu-icon-btn {
   width: 44px;
