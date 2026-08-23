@@ -1057,7 +1057,7 @@ const personalData = {
       location: "India",
       tag: "Dream Home",
       icon: "🏡",
-      thumbnail: "assets/images/future/family-vision.jpg",
+      thumbnail: "assets/images/future/shabi-home.jpg",
       summary: "Building and moving into our dream home, named 'Shabi Home' in April 2027. A sanctuary of peace, warmth, laughter, and generational legacy for our family.",
       quote: "“A house is built by hands, but a home is built by heart, love, and family dreams.”",
       statsBadge: "April 2027 Milestone • Shabi Home 🏡",
