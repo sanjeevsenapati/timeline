@@ -193,6 +193,37 @@ function initTimeline() {
         `;
         modalStoryParagraphs.appendChild(childrenContainer);
       }
+
+      // If this event has Sibling Branches (Sona, Rajeev, Meena), render Siblings Sub-Timeline!
+      if (event.siblingBranches && event.siblingBranches.length > 0) {
+        const siblingContainer = document.createElement('div');
+        siblingContainer.className = 'sibling-branching-timeline';
+        siblingContainer.innerHTML = `
+          <div class="sibling-branching-header">
+            <h3>👨‍👩‍👧‍👦 Our Siblings — Sub-Timeline Branches</h3>
+            <p>Sona (40), Rajeev (38) & Meena (36) — Lifelong family bond and shared roots</p>
+          </div>
+          <div class="sibling-branching-grid">
+            ${event.siblingBranches.map(sib => `
+              <div class="sibling-branch-card">
+                <div class="sibling-card-header">
+                  <div class="sibling-icon">${sib.icon || '💖'}</div>
+                  <div class="sibling-title-wrap">
+                    <h4 class="sibling-name">${sib.name}</h4>
+                    <span class="sibling-relation-badge">${sib.relationship} • Age ${sib.age}</span>
+                  </div>
+                </div>
+                <p class="sibling-summary">${sib.summary}</p>
+                <div class="sibling-lesson">
+                  <span class="sibling-lesson-label">✨ Family Value & Shared Memory:</span>
+                  <p>${sib.lessonsToFamily}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        modalStoryParagraphs.appendChild(siblingContainer);
+      }
     }
 
     // Populate Takeaways

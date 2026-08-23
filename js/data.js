@@ -614,6 +614,66 @@ const personalData = {
       ]
     },
     {
+      id: "siblings-bond",
+      year: "1980s – Present",
+      date: "Lifelong Family Bond",
+      title: "Siblings & Family Bond — Sona (40), Rajeev (38) & Meena (36)",
+      category: "life",
+      categoryLabel: "Roots & Family",
+      location: "Bhadrak, Odisha",
+      tag: "Siblings Timeline",
+      icon: "👨‍👩‍👧‍👦",
+      thumbnail: "assets/images/siblings/sibling-placeholder.jpg",
+      summary: "Growing up together in Bhadrak with sister Sona (Age 40), brother Rajeev (Age 38), and sister Meena (Age 36). Unbroken family bonds of love and loyalty.",
+      quote: "“Siblings are the witnesses of our beginnings, the sharers of our childhood memories, and our lifelong anchors.”",
+      statsBadge: "Sona (40) • Rajeev (38) • Meena (36) • 3 Siblings",
+      storyParagraphs: [
+        "Growing up in Bhadrak, Sanjeev was blessed with three wonderful siblings: **Sona Senapati** (Age 40), **Rajeev Senapati** (Age 38), and **Meena Senapati** (Age 36).",
+        "Their household was filled with laughter, festive Durga Puja & Ratha Yatra celebrations, joint studies, outdoor games, and the warmth of a close-knit Odia family.",
+        "Explore the sub-timeline branches below to read about each sibling's bond and shared memories."
+      ],
+      takeaways: [
+        "Unbreakable bond built across decades of shared history and mutual support",
+        "Deep emotional grounding rooted in childhood memories in Bhadrak",
+        "Standing united as a family through every season of life"
+      ],
+      siblingBranches: [
+        {
+          id: "sib-sona",
+          name: "Sona Senapati",
+          relationship: "Sister",
+          age: 40,
+          icon: "💖",
+          tag: "Sister (Age 40)",
+          summary: "Elder/loving sister, sharing childhood memories, family festivities, and unwavering sisterly care and wisdom.",
+          lessonsToFamily: "Teaches warm compassion, family harmony, and looking after loved ones with boundless care.",
+          photo: "assets/images/siblings/sibling-placeholder.jpg"
+        },
+        {
+          id: "sib-rajeev",
+          name: "Rajeev Senapati",
+          relationship: "Brother",
+          age: 38,
+          icon: "🤝",
+          tag: "Brother (Age 38)",
+          summary: "Brother, sharing boyhood adventures, cricket matches, technical curiosity, and lifelong brotherhood.",
+          lessonsToFamily: "Teaches loyalty, mutual encouragement, and standing shoulder-to-shoulder through life's milestones.",
+          photo: "assets/images/siblings/sibling-placeholder.jpg"
+        },
+        {
+          id: "sib-meena",
+          name: "Meena Senapati",
+          relationship: "Sister",
+          age: 36,
+          icon: "✨",
+          tag: "Sister (Age 36)",
+          summary: "Younger sister, bringing energy, joy, warm conversations, and keeping family traditions alive.",
+          lessonsToFamily: "Teaches cheerful resilience, festive warmth, and keeping family ties strong across any distance.",
+          photo: "assets/images/siblings/sibling-placeholder.jpg"
+        }
+      ]
+    },
+    {
       id: "school-education",
       year: "1990s",
       date: "School Years",

@@ -2432,3 +2432,123 @@ section {
   font-size: 0.84rem;
   opacity: 0.9;
 }
+
+/* --------------------------------------------------------------------------
+ * SIBLINGS BRANCHING SUB-TIMELINE STYLES
+ * -------------------------------------------------------------------------- */
+.sibling-branching-timeline {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="light"] .sibling-branching-timeline {
+  background: rgba(248, 250, 252, 0.85);
+}
+
+.sibling-branching-header {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.sibling-branching-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.sibling-branching-header p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.sibling-branching-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.sibling-branch-card {
+  background: var(--bg-surface, rgba(30, 41, 59, 0.7));
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.sibling-branch-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold, #f59e0b);
+}
+
+.sibling-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.85rem;
+}
+
+.sibling-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1.5px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.sibling-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.sibling-relation-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.18rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-gold);
+}
+
+.sibling-summary {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+  line-height: 1.45;
+}
+
+.sibling-lesson {
+  font-size: 0.84rem;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sibling-lesson-label {
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.sibling-lesson p {
+  margin-bottom: 0;
+  font-size: 0.84rem;
+  opacity: 0.9;
+}
