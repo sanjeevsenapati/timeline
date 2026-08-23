@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 2. Initialize Navigation & Mobile Drawer
   initNavigation();
 
-  // 3. Asynchronously Load Content from data/timeline-data.json
-  const data = await window.loadPersonalData();
+  // 3. Load Personal Data (Synchronously from js/data.js or async from timeline-data.json)
+  const data = window.personalData || await window.loadPersonalData();
 
-  // 4. Populate Dynamic Content from JSON Data
+  // 4. Populate Dynamic Content
   if (data && Object.keys(data).length > 0) {
     populateDynamicData(data);
   }
@@ -178,7 +178,9 @@ function initNavigation() {
  * ----------------------------------------------------------------------------
  */
 function populateDynamicData(data) {
-  const metrics = data.getMetrics();
+  const metrics = (data && typeof data.getMetrics === 'function')
+    ? data.getMetrics()
+    : (window.calculateMetrics ? window.calculateMetrics(data) : { age: 44, marriageYears: '13+', childrenCount: 2, citiesCount: 6 });
 
   // Metrics Bar in Dashboard
   const metricsGrid = document.getElementById('metrics-grid');

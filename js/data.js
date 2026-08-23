@@ -178,29 +178,93 @@ const personalData = {
     },
     companies: [
       {
-        company: "Bank of America",
-        role: "IT Technical Consultant",
-        period: "Important Professional Chapter",
-        location: "Hyderabad / India",
-        badge: "Global Financial Infrastructure",
-        summary: "Provided specialized technical consulting, system stability, and enterprise technology support for global banking operations. This period also coincided with significant personal milestones, including meeting his wife in Hyderabad.",
+        company: "Visa",
+        role: "Senior Staff Software Engineer",
+        employmentType: "Full-time",
+        period: "Sep 2021 – May 2024 · 2 yrs 9 mos",
+        location: "Bengaluru, Karnataka, India · Hybrid",
+        badge: "Global Payment Infrastructure",
+        summary: "Architecting and engineering high-throughput, mission-critical payment rails, Kubernetes container platforms, SRE practices, and enterprise system reliability.",
+        skills: ["Troubleshooting", "Kubernetes", "Payment Infrastructure", "SRE", "Microservices", "Cloud Systems"],
         responsibilities: [
-          "Enterprise system architecture, troubleshooting, and middleware support",
-          "Production stability, high availability, and incident management",
-          "Collaborating with distributed global technology teams"
+          "High-throughput payment system engineering and troubleshooting",
+          "Production-grade Kubernetes cluster management and container orchestration",
+          "Site Reliability Engineering (SRE) and high availability monitoring"
+        ]
+      },
+      {
+        company: "ADP",
+        role: "Architect",
+        employmentType: "Full-time",
+        period: "Nov 2019 – Sep 2021 · 1 yr 11 mos",
+        location: "Greater Hyderabad Area",
+        badge: "Cloud Systems & EKS Architecture",
+        summary: "Leading cloud architecture design, AWS infrastructure automation, EKS cluster management, and scalable enterprise platform services.",
+        skills: ["Amazon Web Services (AWS)", "Amazon EKS", "Cloud Architecture", "Containerization", "DevOps", "SRE"],
+        responsibilities: [
+          "AWS cloud architecture and Amazon EKS cluster deployment",
+          "Automating containerized application environments and DevOps pipelines",
+          "Designing high-availability cloud infrastructure and resilience patterns"
+        ]
+      },
+      {
+        company: "IMImobile",
+        role: "Lead Engineer Cloud",
+        employmentType: "Full-time",
+        period: "Dec 2016 – Nov 2019 · 3 yrs",
+        location: "Hyderabad, Telangana, India",
+        badge: "Cloud Platform & Automation",
+        summary: "Spearheading cloud platform engineering, containerized services, and automated infrastructure deployments across enterprise messaging and communications platforms.",
+        skills: ["AWS", "ECS", "Docker", "NodeJS", "Ansible", "Python", "Bash Shell", "Terraform", "Troubleshooting"],
+        responsibilities: [
+          "Managing AWS ECS container infrastructure, Docker services, and NodeJS microservices",
+          "Writing infrastructure as code (IaC) with Terraform, Ansible, Python, and Bash scripts",
+          "Troubleshooting complex production incidents and driving emerging cloud technologies"
+        ]
+      },
+      {
+        company: "Pramati Technologies Private Limited",
+        role: "Lead System Administrator",
+        employmentType: "Full-time",
+        period: "Jun 2013 – Jun 2016 · 3 yrs 1 mo",
+        location: "Hyderabad, India",
+        badge: "AWS Cloud Architecture & System Automation",
+        summary: "AWS Cloud Architecting, maintaining enterprise AWS environments, building custom automation tools in Python, Bash, and Ansible, and ensuring zero-downtime operations.",
+        skills: ["AWS Cloud Architect", "Python", "Bash", "Ansible", "Linux Administration", "Troubleshooting"],
+        responsibilities: [
+          "AWS Cloud Architecting, maintaining, and managing enterprise AWS environments",
+          "Developing automation tools using Python, Bash shell scripting, and Ansible playbooks",
+          "Deep-dive system administration, performance optimization, and incident troubleshooting"
+        ]
+      },
+      {
+        company: "Bank of America",
+        role: "Sr Analyst - System Support",
+        employmentType: "Full-time",
+        period: "Feb 2012 – Jun 2013 · 1 yr 5 mos",
+        location: "Hyderabad, Telangana, India",
+        badge: "Global Banking Infrastructure",
+        summary: "Providing core system support for Bank of America infrastructure, creating server instances, enterprise middleware management, and high-availability operations.",
+        skills: ["System Support", "Banking Infrastructure", "Server Provisioning", "Troubleshooting", "Incident Response"],
+        responsibilities: [
+          "System Support for Bank of America infrastructure and mission-critical banking servers",
+          "Creating and configuring new server instances, environments, and middleware platforms",
+          "Ensuring system stability, high availability, and rapid incident resolution"
         ]
       },
       {
         company: "Prodevans Technologies & Enterprise Consulting",
         role: "Senior Technology Professional / Consultant",
-        period: "Recent & Current Chapters",
+        employmentType: "Consulting",
+        period: "2020 – Present",
         location: "Mumbai / Bengaluru",
-        badge: "Fintech & Cloud Engineering",
-        summary: "Leading and consulting on mission-critical platforms, OpenShift/Kubernetes infrastructure, API integrations, and next-generation financial architectures.",
+        badge": "CBDC & Sovereign Fintech Consulting",
+        summary: "Consulting on Central Bank Digital Currency (CBDC), OpenShift/Kubernetes platforms, and next-generation financial architectures.",
+        skills: ["CBDC / Digital Rupee", "OpenShift", "Kubernetes", "Fintech API Gateways", "Enterprise Payments"],
         responsibilities: [
-          "Microservices architecture, API gateways, and distributed cloud deployments",
-          "Production reliability, disaster recovery drill orchestration, and monitoring",
-          "System performance tuning, JMeter load testing, and enterprise resilience"
+          "Central Bank Digital Currency (CBDC) & Digital Rupee architectural consulting",
+          "OpenShift and Kubernetes cluster reliability, automation, and SRE best practices",
+          "High-throughput enterprise payments integration"
         ]
       }
     ],
