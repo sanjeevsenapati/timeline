@@ -1,7 +1,7 @@
 # Sanjeev Senapati — Digital Autobiography & Professional Portfolio
 
 > **“My Life. My Journey. My Story.”**  
-> A premium, mobile-first, static digital autobiography, professional technology portfolio, and family legacy website for **Sanjeev Senapati**.
+> A premium, mobile-first, dynamic digital autobiography, professional technology portfolio, and family legacy website for **Sanjeev Senapati**.
 
 ---
 
@@ -13,91 +13,120 @@ This website is designed as a personal digital storybook balancing two complemen
 
 ---
 
-## 📂 File Architecture
+## 📂 Project Architecture
 
 ```text
 /
-├── index.html                  # Main semantic HTML5 single-page narrative
+├── index.html                     # Main single-page narrative application
+├── data/
+│   └── timeline-data.json         # Single source of truth: all site content & timeline events
 ├── css/
-│   ├── style.css              # Editorial tokens, typography, dark/light themes, card layouts
-│   └── responsive.css         # Mobile-first adaptive design (320px to 1920px+)
+│   ├── style.css                 # Design tokens, Rainbow/Dark/Light themes, card layouts
+│   └── responsive.css            # Mobile-first adaptive design (320px to 1920px+)
 ├── js/
-│   ├── data.js                # Central data store (all personal details, milestones, placeholders)
-│   ├── app.js                 # App controller, dynamic metric calculators, theme & navigation
-│   ├── timeline.js            # Interactive chronological timeline & category filters
-│   ├── gallery.js             # Lightbox modal viewer & placeholder guidance
-│   └── animations.js          # IntersectionObserver scroll reveals & animated stat counters
+│   ├── data-loader.js            # Asynchronous JSON fetcher & inline Markdown parser
+│   ├── app.js                    # Main controller, dynamic content population & theme cycle
+│   ├── timeline.js               # Interactive chronological timeline & chapter popups
+│   ├── gallery.js                # Lightbox viewer & image popups
+│   └── animations.js             # Canvas particle animations & scroll reveal observers
 ├── assets/
-│   └── images/                # Organized image directories for all life chapters
-│       ├── childhood/         # Bhadrak childhood memories
-│       ├── school/            # School years
-│       ├── college/           # Independent engineering years
-│       ├── career/            # Enterprise consulting & high-availability systems
-│       ├── places/            # 6 key cities
-│       ├── love/              # Hyderabad 2011 meeting
-│       ├── marriage/          # 04 March 2013 Bhubaneswar wedding
-│       ├── family/            # Family foundation
-│       ├── children/          # Aadvika & Aadhees
-│       ├── father/            # Sacred memorial for father (2009)
-│       ├── mother/            # Mother's tribute (Age 74)
-│       ├── siblings/          # Siblings cards
-│       ├── today/             # 2026 Mumbai portrait & dashboard
-│       └── future/            # Legacy & dreams
+│   └── images/                   # High-definition photography for all life chapters
+│       ├── childhood/            # Bhadrak childhood memories
+│       ├── school/               # School years & mathematics spark
+│       ├── college/              # Engineering college years in Bhubaneswar
+│       ├── career/               # Enterprise consulting & high-availability systems
+│       ├── love/                 # Hyderabad 2011 meeting
+      ├── marriage/             # 04 March 2013 Bhubaneswar wedding
+│       ├── children/             # Aadvika & Aadhees
+│       ├── father/               # Sacred memorial for father (2009)
+│       ├── mother/               # Mother's tribute (Age 74)
+│       ├── today/                # 2026 Mumbai portrait
+│       └── future/               # Legacy & dreams
 └── README.md
 ```
 
 ---
 
-## 🛠️ How to Customize Your Information
+## 📝 How to Edit Content & Add New Timeline Events
 
-All personal content, stories, dates, and placeholders are centralized in:
-📁 [`js/data.js`](file:///Users/sanjeev/workspace/me/js/data.js)
+All site data, personal stories, quotes, photos, and timeline milestones are stored in:
+📁 [`data/timeline-data.json`](file:///Users/sanjeev/workspace/me/data/timeline-data.json)
 
-### 1. Update Personal Stories or Dates
-Open `js/data.js` and edit the corresponding section:
-- **Childhood memories**: Update `childhood.aspects`
-- **College Name / Degree**: Replace `[COLLEGE NAME / UNIVERSITY]` and `[DEGREE]` in `education.collegeDays`
-- **Father's Name & Memories**: Update `familyRoots.father.name` and `memories`
-- **Mother & Siblings**: Update `familyRoots.mother` and `familyRoots.siblings`
-- **Children's Birthdates & Stories**: Update `family.children`
-- **Career & CBDC Details**: Update `career.companies` and `career.skillsMatrix`
+### 1. Adding a New Milestone / Chapter to the Timeline
+To add a new event, open `data/timeline-data.json` and append a new milestone object to the `"timelineEvents"` array:
 
-### 2. Replace Placeholder Images with Real Photos
-Simply place your `.jpg` or `.png` images into the appropriate directory in `assets/images/` and update the file path in `js/data.js`.
+```json
+{
+  "id": "new-milestone-2027",
+  "year": "2027",
+  "date": "15 June 2027",
+  "title": "My New Milestone Title",
+  "category": "career",
+  "categoryLabel": "Career Milestone",
+  "location": "Mumbai, India",
+  "tag": "Milestone",
+  "icon": "🚀",
+  "thumbnail": "assets/images/career/new-milestone.jpg",
+  "summary": "Brief summary of the milestone.",
+  "quote": "“An inspiring quote with **markdown** formatting.”",
+  "statsBadge": "2027 Milestone",
+  "storyParagraphs": [
+    "First paragraph with **bold text** and *italics*.",
+    "Second narrative paragraph describing the chapter in detail."
+  ],
+  "takeaways": [
+    "Key takeaway point 1",
+    "Key takeaway point 2"
+  ]
+}
+```
 
-For example:
-```javascript
-// In js/data.js:
-photo: "assets/images/marriage/our-wedding-2013.jpg"
+### 2. Markdown Formatting Support
+Text fields in `data/timeline-data.json` (such as `storyParagraphs`, `takeaways`, `quote`, `heroBio`) support standard **Markdown** syntax:
+- **Bold text**: `**your text**` or `__your text__`
+- *Italic text*: `*your text*` or `_your text_`
+- [Hyperlinks]: `[Link Text](https://example.com)`
+
+The built-in loader ([`js/data-loader.js`](file:///Users/sanjeev/workspace/me/js/data-loader.js)) automatically converts Markdown syntax into clean HTML when rendering cards and chapter popups.
+
+### 3. Adding & Updating Photos
+Place your `.jpg` or `.png` images into the appropriate folder under `assets/images/` and update the `thumbnail` or `photo` path in `data/timeline-data.json`:
+
+```json
+"thumbnail": "assets/images/career/my-photo.jpg"
 ```
 
 ---
 
-## ⚡ Key Features
+## 🎨 Themes & Customization
 
-- **Dynamic Age & Milestone Calculators**: Computes Sanjeev's age (44 in 2026) dynamically from DOB `1982-03-21`, marriage duration (13+ years) from `2013-03-04`, and career years.
-- **Chronological Timeline**: Filters by *All*, *Roots & Life*, *Education*, *Technology Career*, and *Family & Fatherhood*.
-- **Day & Night Themes**: Switch between *Editorial Warm Ivory* and *Deep Obsidian Bronze* with auto-saved preference.
-- **Strict Privacy Compliance**: No private legal documents, sensitive financial data, or credentials exposed.
-- **Zero Framework Dependency**: 100% pure HTML5, CSS3, Vanilla JS, and SVG. Runs instantaneously by double clicking `index.html`.
+The site features dynamic theme cycling powered by CSS tokens and localStorage:
+- **Rainbow Mode 🌈** (Default): Multi-color animated spectrum text gradients, glowing rainbow buttons, and HSL particle background.
+- **Dark Obsidian ☀️**: Sleek dark luxury aesthetic with golden amber accents.
+- **Light Ivory 🌙**: Warm cream light aesthetic with high contrast text.
+
+To switch themes, click the **Theme Toggle Button (🌈)** in the top navigation bar.
 
 ---
 
 ## 🚀 Running & Deploying Locally
 
 ### Local Preview
-Open `index.html` in any modern web browser, or run a local HTTP server:
+Because content is loaded asynchronously via `fetch('./data/timeline-data.json')`, serve the site using any HTTP server:
+
 ```bash
 # Python 3
 python3 -m http.server 8000
 
-# or Node.js npx serve
+# Node.js npx serve
 npx serve .
 ```
 
+Open `http://localhost:8000` in your web browser.
+
 ### Free Deployment Options
-- **GitHub Pages**: Push this repo to GitHub and enable Pages in repository settings.
-- **Vercel / Netlify / Cloudflare Pages**: Connect the repo or drag-and-drop the directory for instant global CDN deployment.
+- **GitHub Pages**: Push this repository to GitHub (`main` branch) and enable Pages in repository settings.
+- **Vercel / Netlify / Cloudflare Pages**: Connect your GitHub repository for instant global CDN deployment.
 
 ---
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c2724" />
+      <stop offset="100%" stop-color="#0d1614" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(197, 168, 128, 0.25)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+  <rect width="800" height="600" fill="url(#grid)" />
+  <circle cx="400" cy="270" r="180" fill="url(#glow)" />
+  
+  <!-- Outer decorative border -->
+  <rect x="25" y="25" width="750" height="550" rx="16" fill="none" stroke="rgba(197, 168, 128, 0.4)" stroke-width="1.5" stroke-dasharray="8 4" />
+  <rect x="35" y="35" width="730" height="530" rx="12" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+  
+  <!-- Corner Ornaments -->
+  <path d="M 45 65 L 45 45 L 65 45" fill="none" stroke="#C5A880" stroke-width="2" />
+  <path d="M 755 65 L 755 45 L 735 45" fill="none" stroke="#C5A880" stroke-width="2" />
+  <path d="M 45 535 L 45 555 L 65 555" fill="none" stroke="#C5A880" stroke-width="2" />
+  <path d="M 755 535 L 755 555 L 735 555" fill="none" stroke="#C5A880" stroke-width="2" />
+
+  <!-- Center Artwork & Icon Badge -->
+  <circle cx="400" cy="230" r="70" fill="rgba(255,255,255,0.06)" stroke="#C5A880" stroke-width="2" />
+  <circle cx="400" cy="230" r="82" fill="none" stroke="rgba(197,168,128,0.3)" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- Icon symbol text representation -->
+  <text x="400" y="248" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" fill="#E8D5B5" text-anchor="middle">🌿</text>
+  
+  <!-- Title & Subtitle -->
+  <text x="400" y="360" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">The Family I Built</text>
+  <text x="400" y="398" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#C5A880" text-anchor="middle" letter-spacing="0.5">Sanjeev, Swagatika, Aadvika & Aadhees</text>
+  
+  <!-- Add Photo badge -->
+  <g transform="translate(300, 440)">
+    <rect x="0" y="0" width="200" height="38" rx="19" fill="rgba(197, 168, 128, 0.15)" stroke="#C5A880" stroke-width="1.2" />
+    <text x="100" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#F4EDE4" text-anchor="middle" letter-spacing="1">📷 [ ADD / REPLACE PHOTO ]</text>
+  </g>
+
+  <!-- Bottom watermark -->
+  <text x="400" y="525" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle" letter-spacing="2">SANJEEV SENAPATI • DIGITAL AUTOBIOGRAPHY</text>
+</svg>
